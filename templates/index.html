@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f; /* Dark background */
+            color: #fff; /* White text */
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #191919; /* Dark container background */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        h1, h2 {
+            color: #6441a5; /* Twitch purple */
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #6441a5; /* Twitch purple border */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #2c2c2c; /* Dark input background */
+            color: #fff; /* White text */
+        }
+        input[type="submit"] {
+            background-color: #6441a5; /* Twitch purple */
+            color: #fff; /* White text */
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4f2b93; /* Darker Twitch purple on hover */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid #2c2c2c; /* Dark border */
+            background-color: #2c2c2c; /* Dark background */
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        a {
+            color: #6441a5; /* Twitch purple */
+            text-decoration: none;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Recommender</h1>
+        <form method="post">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required><br><br>
+            <label for="search_input">Search:</label>
+            <input type="text" id="search_input" name="search_input" required><br><br>
+            <input type="submit" value="Search">
+        </form>
+        {% if recommendations %}
+            <h2>Recommendations:</h2>
+            <ul>
+                {% for product in recommendations %}
+                    <li>
+                        <a href="{{ product['product_url'] }}">{{ product['product_title'] }}</a>
+                        <p>{{ product['product_breadcrumb'] }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
