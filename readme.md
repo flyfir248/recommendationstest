@@ -60,10 +60,12 @@ This project is licensed under the [MIT License](LICENSE).
 
 page 1 search page
 
-
+![img.png](img.png)
 
 Page 2 result page
 
-
+![img_1.png](img_1.png)
 
 Page 3 the redirects to lannister server
+
+![img_2.png](img_2.png)
