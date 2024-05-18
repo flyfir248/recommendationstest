@@ -69,3 +69,32 @@ Page 2 result page
 Page 3 the redirects to lannister server
 
 ![img_2.png](img_2.png)
+
+___________
+
+# Product Recommender
+## Overview
+
+The Product Recommender is a Flask-based web application designed to provide personalized product recommendations to users based on their search queries and previous interactions. The application utilizes a pandas DataFrame to store user activity data, such as user IDs, product titles, and breadcrumbs. Here's how the application works:
+
+- Data Loading: The application loads user activity data from a CSV file into a pandas DataFrame. 
+
+- Processing User Input: When a user submits a search query along with their user ID, the application filters the DataFrame to retrieve relevant user activity data. 
+
+- Text Vectorization: Product titles and breadcrumbs are combined into a single text column and transformed into numerical features using TF-IDF vectorization. 
+
+- Calculating Similarity: Cosine similarity is calculated between the user's search input and each product in the filtered DataFrame. 
+
+- Generating Recommendations: The top 5 products with the highest similarity scores are selected as recommendations for the user. 
+
+- Rendering Template: The recommendations are then rendered on the web page along with the user's search input and user ID.
+
+### Usage
+
+#### To use the Product Recommender:
+
+- Ensure you have the necessary dependencies installed. 
+- Run the Flask application (main.py). 
+- Access the application in your web browser. 
+- Enter your user ID and search query. 
+- Receive personalized product recommendations based on your input.
