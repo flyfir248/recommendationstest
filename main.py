@@ -38,8 +38,11 @@ def index():
         # Convert recommendations DataFrame to a list of dictionaries
         recommendations = recommendations.to_dict(orient='records')
 
+        # Get banner recommendations (for example, top 3 recommendations)
+        banner_recommendations = data.sample(3).to_dict(orient='records')
+
         return render_template('index.html', search_input=search_input, user_id=user_id,
-                               recommendations=recommendations)
+                               recommendations=recommendations, banner_recommendations=banner_recommendations)
 
     return render_template('index.html')
 

@@ -98,3 +98,8 @@ The Product Recommender is a Flask-based web application designed to provide per
 - Access the application in your web browser. 
 - Enter your user ID and search query. 
 - Receive personalized product recommendations based on your input.
+
+
+### new addition
+
+![img_3.png](img_3.png)

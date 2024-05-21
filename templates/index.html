@@ -62,6 +62,17 @@
         p {
             margin: 5px 0;
         }
+        /* New styles for the banner */
+        .banner {
+            background-color: #6441a5; /* Twitch purple */
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .banner p {
+            margin: 0;
+            color: #fff; /* White text */
+        }
     </style>
 </head>
 <body>
@@ -74,6 +85,19 @@
             <input type="text" id="search_input" name="search_input" required><br><br>
             <input type="submit" value="Search">
         </form>
+
+        <!-- Banner section -->
+        <div class="banner">
+            <p>Check out our recommended products:</p>
+            <ul>
+                {% for product in banner_recommendations %}
+                    <li>
+                        <a href="{{ product['product_url'] }}">{{ product['product_title'] }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
         {% if recommendations %}
             <h2>Recommendations:</h2>
             <ul>
